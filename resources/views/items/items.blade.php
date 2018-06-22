@@ -9,7 +9,7 @@
                         </div>
                         <div class="panel-body">
                             @if ($item->id)
-                                <p class="item-title"><a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></p>
+                                <p class="item-title"><a href="{{ action ('ItemsController@show', $item->id) }}">{{ $item->name }}</a></p>
                             @else
                                 <p class="item-title">{{ $item->name }}</p>
                             @endif
@@ -23,6 +23,7 @@
                         @if (isset($item->count))
                             <div class="panel-footer">
                                 <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Wants</p>
+                                <p class="text-center">{{ $key+1 }}位: {{ $item->count}} Have</p>
                             </div>
                         @endif
                     </div>
