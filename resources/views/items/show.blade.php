@@ -14,9 +14,6 @@
                             @if (Auth::check())
                                 @include('items.want_button', ['item' => $item])
                             @endif
-                            @if (Auth::check()0
-                                @include('items_have_button', {'item' => $item])
-                            @endif
                         </div>
                     </div>
                 </div>
@@ -37,13 +34,14 @@
                 </div>
             </div>
             <div class="have-users">
-                <div class="panel panel-defasssult">
+                <div class="panel panel-default">
                     <div class="panel-heading text-center">
                         Haveしたユーザ
                     </div>
                     <div class="panel-body">
-                        @foreach ($have_users as $user)
+                         @foreach ($have_users as $user)
                             <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
+                        @endforeach  
                     </div>
                 </div>
             </div>
